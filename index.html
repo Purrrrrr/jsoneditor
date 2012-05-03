@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.jeditable.mini.js"></script>
+    <script type="text/javascript" src="jsoneditor.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        $('input').jsoneditor();
+      });
+    </script>
+    <style>
+      /* Generic buttons */
+      .jsoneditor .addchild,
+      .jsoneditor .remover,
+      .jsoneditor .type {
+        font-family: sans-serif;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .jsoneditor > .jsondata > .remover {
+        display: none;
+      }
+      .jsoneditor .remover {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+      }
+      .jsoneditor .addchild {
+        color: green;
+      }
+      .jsoneditor .remover {
+        color: darkred;
+      }
+      /* Containers: list and object */
+      .jsoneditor .object,
+      .jsoneditor .list {
+        background: #fcfcfc;
+        position: relative;
+        padding: 25px 5px 5px 5px;
+        border: 1px solid black;
+      }
+      .jsoneditor .object > .type,
+      .jsoneditor .list > .type {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+      }
+      .jsoneditor .object > .key_value_pair {
+        position: relative;
+        padding-left: 100px;   
+      }
+      .jsoneditor .object > .key_value_pair > .jsonkey {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100px;
+      }
+
+      /* Strings and other scalar values*/
+      .jsoneditor .scalar {
+        position: relative;
+        min-height: 20px;
+        width: 200px;
+        padding: 0 80px 0 0;
+        background: #eee;
+        margin: 2px 0px;
+      }
+      .jsoneditor .scalar span {
+        display: block;
+        width: 200px;
+        min-height: 20px;
+      }
+      .jsoneditor .scalar > .type {
+        position: absolute;
+        right: 16px;
+        top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <input size="100" type="text" value='{"koe": "asd", "test": 4, "empty": null}' name="asdf" />
+  </body>
+</html>
